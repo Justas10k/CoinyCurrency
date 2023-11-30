@@ -1,0 +1,87 @@
+Nav{
+  transition: background-color 0.3s ease-in-out;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: pink;
+}
+.scrolled{
+  background-color: #0a146e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.logo{
+  height: 40px;
+}
+.nav-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-icon{
+  margin: 8px 10px;
+  font-size: 20px;
+  color: white;
+}
+.X-icon{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: black;
+  z-index: 200;
+}
+/* toogle */
+@media (max-width: 992px) {
+  Nav{
+    justify-content: space-between;
+  }
+  .toggle-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 8px 20px;
+    z-index: 20001111;
+  }
+  .mobile-nav{
+      z-index: 200;
+      top: 0;
+      position: fixed;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color:#ffffff;
+      transition: .3s;
+  } 
+
+
+  .mobile-nav.active{
+      left: 0;
+      box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .slide-links{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide-links ul {
+    margin-top: 35px;
+  }
+  
+  .slide-links ul li {
+    text-align: left;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
