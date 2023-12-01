@@ -8,7 +8,7 @@ Nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: pink;
+
 }
 .scrolled{
   background-color: #0a146e;
