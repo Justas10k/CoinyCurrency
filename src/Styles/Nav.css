@@ -34,6 +34,16 @@ Nav{
   color: black;
   z-index: 200;
 }
+.link{
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: rgba(242, 247, 254, 0);
+
+}
+.togglelink{
+  color: black;
+  font-size: 25px;
+}
 /* toogle */
 @media (max-width: 992px) {
   Nav{
