@@ -44,6 +44,9 @@ Nav{
   color: black;
   font-size: 25px;
 }
+.link:hover{
+  background: rgba(242, 247, 254, 0.2);
+}
 /* toogle */
 @media (max-width: 992px) {
   Nav{

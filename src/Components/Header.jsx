@@ -34,20 +34,24 @@ const Header = () => {
         <div className="convert-con">
           <div className="currency-top">
             {Object.keys(sectionComponents).map((section) => (
+
               <div
                 key={section}
                 className={`currency-top-sections ${
                   activeSection === section ? "active" : ""
                 }`}
+                onClick={() => handleSectionClick(section)}
               >
                 <a
                   href="#"
-                  className="currency-link"
-                  onClick={() => handleSectionClick(section)}
+                  className={`currency-link ${
+                    activeSection === section ? "active" : ""
+                  }`}
                 >
                   {getIcon(section)} {section}
                 </a>
               </div>
+
             ))}
           </div>
           <div className="currency-bot">
@@ -62,13 +66,13 @@ const Header = () => {
 const getIcon = (section) => {
   switch (section) {
     case 'convert':
-      return <IconCoins className="Currency-icon" />;
+      return <IconCoins className={`Currency-icon`  } />;
     case 'send':
-      return <IconSend className="Currency-icon" />;
+      return <IconSend className={`Currency-icon` } />;
     case 'charts':
-      return <IconChartBar className="Currency-icon" />;
+      return <IconChartBar className={`Currency-icon` } />;
     case 'alerts':
-      return <IconBell className="Currency-icon" />;
+      return <IconBell className={`Currency-icon` }/>;
     default:
       return null;
   }

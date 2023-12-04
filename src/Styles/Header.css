@@ -48,15 +48,21 @@ Header{
   align-items: center;
   height: 100%;
   width: 25%;
+  cursor: pointer;
+}
+.currency-top-sections:hover{
+  background-color: #f9fbfd;
 }
 .currency-link{
-  color: #828d9a;
-
+  color:#4e647f;
+}
+.currency-link.active{
+  color: #006fe8;
 }
 .currency-top-sections.active {
   background-color: white;
+  color: rgb(255, 0, 0);
 }
-
 
 .Currency-icon{
   stroke-width: 2px;

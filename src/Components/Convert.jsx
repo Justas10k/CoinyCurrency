@@ -43,18 +43,14 @@ const Convert = () => {
 
     // Store the conversion result in the new state
     setConversionResult(
-      <div>
-        <p>
-          {amount} {fromCurrency} is equal to {converted} {toCurrency}.
-        </p>
-        <p>
-          1 {fromCurrency} is worth {exchangeRate} {toCurrency}.
-        </p>
-        <p>
-          1 {toCurrency} is worth {(1 / exchangeRate).toFixed(6)} {fromCurrency}.
-        </p>
-      </div>
-    );
+      `
+        ${amount} ${fromCurrency} = ${converted} ${toCurrency}.
+        \n
+        1 ${fromCurrency} = ${exchangeRate} ${toCurrency}.
+        \n
+        1 ${toCurrency} = ${(1 / exchangeRate).toFixed(6)} ${fromCurrency}.
+      `
+  );
   };
 
   return (
