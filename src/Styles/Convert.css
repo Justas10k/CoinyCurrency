@@ -11,6 +11,7 @@
   font-weight: 600;
   font-size: 18px;
   gap: 10px;
+  padding:0px 0px 10px 0px;
 }
 .input-con{
   width: 40%;
@@ -68,15 +69,15 @@ font-weight: 600;
   color: #8991a0;
 }
 .info-but-con{
-  padding: 30px 0px;
+  padding: 10px 0px;
   display: flex;
   justify-content: space-between;
 }
 .currency-attention{
+  padding: 5px;
   background-color: #f2f7fe;
   width: 50%;
   display: flex;
-  padding: 5px 10px 10px 10px;
 }
 .icon-box{
   margin: auto;

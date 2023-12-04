@@ -24,41 +24,39 @@ const Header = () => {
     setActiveSection(section);
   };
   return (
-    <>
-      <header id='home'>
-        <div className='header-image-box'>
-
-        <div className='con'>
-        <div className='header-text'>
-          <h1>Xe Currency Converter</h1>
+    <header id="home">
+    <div className="header-image-box">
+      <div className="con">
+        <div className="header-text">
+          <h2>Coiny Currency Converter</h2>
           <p>Check live foreign currency exchange rates</p>
         </div>
-        <div className='convert-con'>
-      <div className='currency-top'>
-        {Object.keys(sectionComponents).map((section) => (
-          <div
-            key={section}
-            className={`currency-top-sections ${activeSection === section ? 'active' : ''}`}
-          >
-            <a href="#" className="currency-link" onClick={() => handleSectionClick(section)}>
-              {getIcon(section)} {section}
-            </a>
+        <div className="convert-con">
+          <div className="currency-top">
+            {Object.keys(sectionComponents).map((section) => (
+              <div
+                key={section}
+                className={`currency-top-sections ${
+                  activeSection === section ? "active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  className="currency-link"
+                  onClick={() => handleSectionClick(section)}
+                >
+                  {getIcon(section)} {section}
+                </a>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className='currency-bot'>
-        {sectionComponents[activeSection]}
+          <div className="currency-bot">
+            {sectionComponents[activeSection]}
+          </div>
+        </div>
       </div>
     </div>
-
-
-
-        </div>
-        
-        </div>
-
-      </header>
-    </>
+  </header>
   );
 };
 const getIcon = (section) => {

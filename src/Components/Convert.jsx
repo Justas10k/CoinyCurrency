@@ -4,34 +4,33 @@ import '../Styles/Convert.css';
 
 const Convert = () => {
   const [amount, setAmount] = useState('');
+  //options
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('EUR');
-  const [exchangeRates, setExchangeRates] = useState({});
+
+  const [exchangeRate, setExchangeRate] = useState(null);
   const [currencyOptions, setCurrencyOptions] = useState([]);
+
   const [conversionResult, setConversionResult] = useState(null);
 
   useEffect(() => {
-    const fetchExchangeRates = async () => {
+    const fetchExchangeRate = async () => {
       try {
+        const apiKey = 'fca_live_I5OEo7N2IbSLAV5DWY2HwGo0FD8MKF0JmGywYdv9';
         const response = await fetch(
-          'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_I5OEo7N2IbSLAV5DWY2HwGo0FD8MKF0JmGywYdv9&base_currency=USD'
+          `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${fromCurrency}`
         );
         const data = await response.json();
-        setExchangeRates(data.data);
+        setExchangeRate(data.data[toCurrency]);
         const options = Object.keys(data.data);
         setCurrencyOptions(options);
+
       } catch (error) {
         console.error('Error fetching exchange rates:', error);
       }
     };
 
-    fetchExchangeRates();
-  }, []);
-
-  useEffect(() => {
-    if (fromCurrency !== toCurrency) {
-      setConversionResult(null);
-    }
+    fetchExchangeRate();
   }, [fromCurrency, toCurrency]);
 
   const handleConversion = () => {
@@ -40,18 +39,19 @@ const Convert = () => {
       return;
     }
 
-    const converted = (parseFloat(amount) * exchangeRates[toCurrency]).toFixed(6);
+    const converted = (parseFloat(amount) * exchangeRate).toFixed(6);
 
+    // Store the conversion result in the new state
     setConversionResult(
-      <div className='currency-result-box'>
-        <div className='amout-text'>
-          {amount} {fromCurrency} = <span className='result-big-text'> {converted} {toCurrency}</span>
-        </div>
-        <p className='text-grey'>
-          1 {fromCurrency} = {(exchangeRates[toCurrency]).toFixed(6)} {toCurrency}
+      <div>
+        <p>
+          {amount} {fromCurrency} is equal to {converted} {toCurrency}.
         </p>
-        <p className='text-grey'>
-          1 {toCurrency} = {(1 / exchangeRates[toCurrency]).toFixed(6)} {fromCurrency}
+        <p>
+          1 {fromCurrency} is worth {exchangeRate} {toCurrency}.
+        </p>
+        <p>
+          1 {toCurrency} is worth {(1 / exchangeRate).toFixed(6)} {fromCurrency}.
         </p>
       </div>
     );
