@@ -1,20 +1,28 @@
+import { useState } from "react";
 import {
   IconCoins,
   IconSend,
   IconChartBar,
   IconBell
 } from "@tabler/icons-react";
+
 import '../Styles/Header.css';
 import Convert from "./Convert";
 
 
 const Header = () => {
+  const [activeSection, setActiveSection] = useState('convert');
 
+  const sectionComponents = {
+    convert: <Convert />,
+    send: <Convert />,
+    charts: <Convert/>,
+    alerts: <Convert/>,
+  };
 
-//   <div className='con text-center text-white'>
-//   <h1>Xe Currency Converter</h1>
-//   <p>Check live foreign currency exchange rates</p>
-// </div>
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+  };
   return (
     <>
       <header id='home'>
@@ -26,19 +34,22 @@ const Header = () => {
           <p>Check live foreign currency exchange rates</p>
         </div>
         <div className='convert-con'>
-
-          <div className='currency-top'>
-            <div className='currency-top-sections'><a href="$" className="currency-link"><IconCoins className="Currency-icon"/>Convert</a></div>
-            <div className='currency-top-sections'><a href="$" className="currency-link"><IconSend className="Currency-icon"/>Send</a></div>
-            <div className='currency-top-sections'><a href="$" className="currency-link"><IconChartBar className="Currency-icon"/>Charts</a></div>
-            <div className='currency-top-sections'><a href="$" className="currency-link"><IconBell className="Currency-icon"/>Alerts</a></div>
+      <div className='currency-top'>
+        {Object.keys(sectionComponents).map((section) => (
+          <div
+            key={section}
+            className={`currency-top-sections ${activeSection === section ? 'active' : ''}`}
+          >
+            <a href="#" className="currency-link" onClick={() => handleSectionClick(section)}>
+              {getIcon(section)} {section}
+            </a>
           </div>
-
-          <div className='currency-bot'>
-            <Convert/>
-          </div>
-
-        </div>
+        ))}
+      </div>
+      <div className='currency-bot'>
+        {sectionComponents[activeSection]}
+      </div>
+    </div>
 
 
 
@@ -50,5 +61,18 @@ const Header = () => {
     </>
   );
 };
-
+const getIcon = (section) => {
+  switch (section) {
+    case 'convert':
+      return <IconCoins className="Currency-icon" />;
+    case 'send':
+      return <IconSend className="Currency-icon" />;
+    case 'charts':
+      return <IconChartBar className="Currency-icon" />;
+    case 'alerts':
+      return <IconBell className="Currency-icon" />;
+    default:
+      return null;
+  }
+};
 export default Header; 

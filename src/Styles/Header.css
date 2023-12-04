@@ -2,7 +2,9 @@
 Header{
   padding:100px 0px 0px 0px;
   background-color: rgb(179, 116, 241);
-  height: 60vh;
+  height: 40vh;
+  max-height: 500px;
+  min-height: 400px;
 }
 
 .head-box{
@@ -16,6 +18,7 @@ Header{
   width: 60%;
   padding: 20px 0px 50px 0px;
 }
+
 .converter{
   display: flex;
   justify-content: center;
@@ -27,19 +30,18 @@ Header{
   background-color: white;
   margin: 10px auto 0px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  height: 300px;
+  height: auto;
   width: 98%;
   border-radius: 7px;
 }
+
 .currency-top{
   text-align: center;
-  height: 20%;
+  height: 60px;
   width: 100%;
-  background-color: rebeccapurple;
   display: flex;
 }
 .currency-top-sections{
-
   background-color: #f0f5fa;
   display: flex;
   justify-content: center;
@@ -51,6 +53,11 @@ Header{
   color: #828d9a;
 
 }
+.currency-top-sections.active {
+  background-color: white;
+}
+
+
 .Currency-icon{
   stroke-width: 2px;
   width: 22px;

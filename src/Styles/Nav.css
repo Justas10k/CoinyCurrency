@@ -38,7 +38,7 @@ Nav{
   padding: 8px 20px;
   border-radius: 6px;
   background: rgba(242, 247, 254, 0);
-
+  color: white;
 }
 .togglelink{
   color: black;

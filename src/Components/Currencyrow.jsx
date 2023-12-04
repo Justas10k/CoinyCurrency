@@ -1,11 +1,9 @@
-const CurrencyRow = () => {
+import React from 'react'
 
-
+function CurrencyRow() {
   return (
-    <div>
+    <div>CurrencyRow</div>
+  )
+}
 
-    </div>
-  );
-};
-
-export default CurrencyRow;
+export default CurrencyRow

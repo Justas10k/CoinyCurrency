@@ -1,36 +1,115 @@
 .form-convert{
-  display: flex;
-  font-weight: 600;
   width: 90%;
+  padding: 45px 0px 20px 0px;
   margin: 0px auto;
-  padding: 30px 0px;
 
+}
+.form-inputs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  gap: 10px;
+}
+.input-con{
+  width: 40%;
+}
+.select-con{
+  width: 30%;
 }
 label {
   display: flex;
-  margin-bottom: 5px;
 }
 
 input,
 select {
+  width: 100%;
   padding: 8px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+.hidden{
+  visibility: hidden;
+}
+.circle{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  transform: rotate(0deg);
+  flex-shrink: 0;
+}
+.circle-icon{
+  stroke-width: 2;
+  height: 16px;
+  color: #1477e3;
+}
+.convert-result{
+  padding: 10px 0px;
+}
+.currency-result-box{
+font-weight: 600; 
+}
+.amout-text{
+  color:#737c8e;
+  font-size: 21px;
+}
+.result-big-text{
+  color: #2e3c57;
+  font-size: 32px;
+}
+.text-grey{
+  color: #8991a0;
+}
+.info-but-con{
+  padding: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.currency-attention{
+  background-color: #f2f7fe;
+  width: 50%;
+  display: flex;
+  padding: 5px 10px 10px 10px;
+}
+.icon-box{
+  margin: auto;
+  padding: 0px 5px 0px 0px;
+}
+.info-icon{
+  height: 20px;
+  stroke-width: 2;
+  color: gray;
+}
+.small-text{
+  margin: auto 0px;
+  font-size: 12px;
+  line-height: 15px;
+}
+.small-link-text{
+  text-decoration: underline;
+}
+.small-link-text:hover{
+  text-decoration: none;
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #0071eb;
   color: white;
-  padding: 10px 15px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: rgb(17, 127, 245)
 }
 
 .result {
@@ -40,19 +119,4 @@ button:hover {
 p {
   margin: 0;
   line-height: 1.5;
-}
-
-select {
-
-  width: 200px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-option {
-
-  background-color: #ff0000;
-  color: #333;
 }
