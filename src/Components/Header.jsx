@@ -48,7 +48,8 @@ const Header = () => {
                     activeSection === section ? "active" : ""
                   }`}
                 >
-                  {getIcon(section)} {section}
+                  {getIcon(section)}
+                  <span>{section}</span>
                 </a>
               </div>
 

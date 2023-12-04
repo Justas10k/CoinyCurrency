@@ -1,6 +1,6 @@
 .form-convert{
   width: 90%;
-  padding: 45px 0px 20px 0px;
+  padding: 45px 0px 30px 0px;
   margin: 0px auto;
 
 }
@@ -43,8 +43,7 @@ select {
   background-color: transparent;
   border-radius: 50%;
   border: 1px solid #ccc;
-  transform: rotate(0deg);
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 .circle-icon{
   stroke-width: 2;
@@ -72,11 +71,13 @@ font-weight: 600;
   padding: 10px 0px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .currency-attention{
+  border-radius: 5px;
   padding: 5px;
   background-color: #f2f7fe;
-  width: 50%;
+  width: 70%;
   display: flex;
 }
 .icon-box{
@@ -120,4 +121,36 @@ button:hover {
 p {
   margin: 0;
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .form-inputs{
+    flex-direction: column;
+    gap: 15px;
+  }
+  .input-con{
+    width: 100%;
+  }
+  .select-con{
+    width: 100%;
+  }
+  .circle-con{
+    width: 100%;
+  }
+  .hidden{
+    display: none;
+  }
+  .circle{
+    transform: rotate(90deg);
+  }
+  .info-but-con{
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
+  .currency-attention{
+    width: 100%;
+  }
+  button {
+    width: 100%;
+  }
 }

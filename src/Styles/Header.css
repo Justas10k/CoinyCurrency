@@ -6,7 +6,6 @@ Header{
   max-height: 500px;
   min-height: 400px;
 }
-
 .head-box{
   padding: 100px 0px 0px;
 
@@ -53,6 +52,13 @@ Header{
 .currency-top-sections:hover{
   background-color: #f9fbfd;
 }
+.currency-top-sections:first-child {
+  border-top-left-radius: 7px;
+}
+
+.currency-top-sections:nth-child(4) {
+  border-top-right-radius: 7px;
+}
 .currency-link{
   color:#4e647f;
 }
@@ -73,4 +79,14 @@ Header{
 .currency-bot{
   width: 100%;
   height: 80%;
+}
+@media (max-width: 576px) {
+  .currency-link{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .Currency-icon{
+   margin: auto;
+  }
 }

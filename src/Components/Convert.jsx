@@ -43,14 +43,18 @@ const Convert = () => {
 
     // Store the conversion result in the new state
     setConversionResult(
-      `
-        ${amount} ${fromCurrency} = ${converted} ${toCurrency}.
-        \n
-        1 ${fromCurrency} = ${exchangeRate} ${toCurrency}.
-        \n
-        1 ${toCurrency} = ${(1 / exchangeRate).toFixed(6)} ${fromCurrency}.
-      `
-  );
+      <div>
+        <p>
+          {amount} {fromCurrency} is equal to {converted} {toCurrency}.
+        </p>
+        <p>
+          1 {fromCurrency} is worth {exchangeRate} {toCurrency}.
+        </p>
+        <p>
+          1 {toCurrency} is worth {(1 / exchangeRate).toFixed(6)} {fromCurrency}.
+        </p>
+      </div>
+    );
   };
 
   return (
@@ -81,7 +85,7 @@ const Convert = () => {
             ))}
           </select>
         </div>
-        <div>
+        <div className='circle-con'>
         <label className='hidden'>1</label>
         <div className='circle'>
           <svg className="circle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 17" aria-hidden="true" ><path  fill="currentColor" d="M11.726 1.273l2.387 2.394H.667V5h13.446l-2.386 2.393.94.94 4-4-4-4-.94.94zM.666 12.333l4 4 .94-.94L3.22 13h13.447v-1.333H3.22l2.386-2.394-.94-.94-4 4z" ></path></svg>
