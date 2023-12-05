@@ -4,7 +4,7 @@ import {
   IconMenu2,
   IconX,
 } from "@tabler/icons-react";
-import logo from '../img/white logo.png'
+import logo from '../img/coinylogo.png'
 import { useState, useEffect } from "react";
 import "../Styles/Nav.css";
 

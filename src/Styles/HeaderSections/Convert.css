@@ -77,7 +77,7 @@ font-weight: 600;
   border-radius: 5px;
   padding: 5px;
   background-color: #f2f7fe;
-  width: 70%;
+  width: 60%;
   display: flex;
 }
 .icon-box{
@@ -121,6 +121,11 @@ button:hover {
 p {
   margin: 0;
   line-height: 1.5;
+}
+@media (max-width: 992px) {
+  .currency-attention{
+    width: 70%;
+  }
 }
 
 @media (max-width: 768px) {

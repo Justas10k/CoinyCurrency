@@ -7,7 +7,8 @@ import {
 } from "@tabler/icons-react";
 
 import '../Styles/Header.css';
-import Convert from "./Convert";
+import Convert from "./HeaderSections/Convert";
+import ComingSoon from './HeaderSections/ComingSoon'
 
 
 const Header = () => {
@@ -15,9 +16,9 @@ const Header = () => {
 
   const sectionComponents = {
     convert: <Convert />,
-    send: <Convert />,
-    charts: <Convert/>,
-    alerts: <Convert/>,
+    send: <ComingSoon />,
+    charts: <ComingSoon/>,
+    alerts: <ComingSoon/>,
   };
 
   const handleSectionClick = (section) => {
@@ -31,20 +32,20 @@ const Header = () => {
           <h2>Coiny Currency Converter</h2>
           <p>Check live foreign currency exchange rates</p>
         </div>
-        <div className="convert-con">
-          <div className="currency-top">
+        <div className="header-section">
+          <div className="header-section-top">
             {Object.keys(sectionComponents).map((section) => (
 
               <div
                 key={section}
-                className={`currency-top-sections ${
+                className={`header-section-top-links ${
                   activeSection === section ? "active" : ""
                 }`}
                 onClick={() => handleSectionClick(section)}
               >
                 <a
                   href="#"
-                  className={`currency-link ${
+                  className={`top-links-text-icon ${
                     activeSection === section ? "active" : ""
                   }`}
                 >
@@ -55,7 +56,7 @@ const Header = () => {
 
             ))}
           </div>
-          <div className="currency-bot">
+          <div className="header-section-bot">
             {sectionComponents[activeSection]}
           </div>
         </div>

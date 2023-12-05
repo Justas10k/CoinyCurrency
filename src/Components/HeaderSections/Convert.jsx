@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { IconInfoCircle } from '@tabler/icons-react';
-import '../Styles/Convert.css';
+import '../../Styles/HeaderSections/Convert.css';
 
 const Convert = () => {
   const [amount, setAmount] = useState('');

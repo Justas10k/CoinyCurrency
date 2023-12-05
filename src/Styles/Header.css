@@ -1,7 +1,7 @@
 
 Header{
+  background:url(../img/currencybg.png);
   padding:70px 0px 0px 0px;
-  background-color: rgb(179, 116, 241);
   height: 40vh;
   max-height: 500px;
   min-height: 400px;
@@ -25,7 +25,7 @@ Header{
   flex-direction: column;
   padding: 20px;
 }
-.convert-con{
+.header-section{
   background-color: white;
   margin: 10px auto 0px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -34,13 +34,13 @@ Header{
   border-radius: 7px;
 }
 
-.currency-top{
+.header-section-top{
   text-align: center;
   height: 60px;
   width: 100%;
   display: flex;
 }
-.currency-top-sections{
+.header-section-top-links{
   background-color: #f0f5fa;
   display: flex;
   justify-content: center;
@@ -49,23 +49,23 @@ Header{
   width: 25%;
   cursor: pointer;
 }
-.currency-top-sections:hover{
+.header-section-top-links:hover{
   background-color: #f9fbfd;
 }
-.currency-top-sections:first-child {
+.header-section-top-links:first-child {
   border-top-left-radius: 7px;
 }
 
-.currency-top-sections:nth-child(4) {
+.header-section-top-links:nth-child(4) {
   border-top-right-radius: 7px;
 }
-.currency-link{
+.top-links-text-icon{
   color:#4e647f;
 }
-.currency-link.active{
+.top-links-text-icon.active{
   color: #006fe8;
 }
-.currency-top-sections.active {
+.header-section-top-links.active {
   background-color: white;
   color: rgb(255, 0, 0);
 }
@@ -76,12 +76,13 @@ Header{
   height: 22px;
   margin: 0px 5px 5px 0px;
 }
-.currency-bot{
+.header-section-bot{
   width: 100%;
-  height: 80%;
+  height: auto;
+  min-height: 250px;
 }
 @media (max-width: 576px) {
-  .currency-link{
+  .top-links-text-icon{
     display: flex;
     flex-direction: column;
     overflow: hidden;
