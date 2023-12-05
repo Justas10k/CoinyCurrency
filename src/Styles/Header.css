@@ -1,10 +1,8 @@
 
 Header{
-  background:url(../img/currencybg.png);
-  padding:70px 0px 0px 0px;
-  height: 40vh;
-  max-height: 500px;
-  min-height: 400px;
+  background: linear-gradient(to bottom, #0a146e 70%, transparent 60%);
+  padding:70px 0px 30px 0px;
+  height: auto;
 }
 .head-box{
   padding: 100px 0px 0px;
@@ -70,7 +68,7 @@ Header{
   color: rgb(255, 0, 0);
 }
 
-.Currency-icon{
+.header-section-top-icon{
   stroke-width: 2px;
   width: 22px;
   height: 22px;
@@ -87,7 +85,7 @@ Header{
     flex-direction: column;
     overflow: hidden;
   }
-  .Currency-icon{
+  .header-section-top-icon{
    margin: auto;
   }
 }

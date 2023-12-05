@@ -26,7 +26,6 @@ const Header = () => {
   };
   return (
     <header id="home">
-    <div className="header-image-box">
       <div className="con">
         <div className="header-text">
           <h2>Coiny Currency Converter</h2>
@@ -61,20 +60,19 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
   </header>
   );
 };
 const getIcon = (section) => {
   switch (section) {
     case 'convert':
-      return <IconCoins className={`Currency-icon`  } />;
+      return <IconCoins className={`header-section-top-icon`  } />;
     case 'send':
-      return <IconSend className={`Currency-icon` } />;
+      return <IconSend className={`header-section-top-icon` } />;
     case 'charts':
-      return <IconChartBar className={`Currency-icon` } />;
+      return <IconChartBar className={`header-section-top-icon` } />;
     case 'alerts':
-      return <IconBell className={`Currency-icon` }/>;
+      return <IconBell className={`header-section-top-icon` }/>;
     default:
       return null;
   }
