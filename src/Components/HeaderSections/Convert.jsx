@@ -3,6 +3,10 @@ import { IconInfoCircle } from '@tabler/icons-react';
 import '../../Styles/HeaderSections/Convert.css';
 
 const Convert = () => {
+  const handleSwitchCurrencies = () => {
+    setFromCurrency(toCurrency);
+    setToCurrency(fromCurrency);
+  };
   const [amount, setAmount] = useState('');
   //options
   const [fromCurrency, setFromCurrency] = useState('USD');
@@ -12,6 +16,8 @@ const Convert = () => {
   const [currencyOptions, setCurrencyOptions] = useState([]);
 
   const [conversionResult, setConversionResult] = useState(null);
+
+
 
   useEffect(() => {
     const fetchExchangeRate = async () => {
@@ -44,18 +50,20 @@ const Convert = () => {
     // Store the conversion result in the new state
     setConversionResult(
       <div>
-        <p>
-          {amount} {fromCurrency} is equal to {converted} {toCurrency}.
+        <p className='amout-text'>
+          {amount} {fromCurrency} = <p className='result-big-text'>{converted} {toCurrency}.</p>
         </p>
-        <p>
-          1 {fromCurrency} is worth {exchangeRate} {toCurrency}.
+        <p className='text-grey'>
+          1 {fromCurrency} = {exchangeRate} {toCurrency}.
         </p>
-        <p>
-          1 {toCurrency} is worth {(1 / exchangeRate).toFixed(6)} {fromCurrency}.
+        <p className='text-grey'>
+          1 {toCurrency} = {(1 / exchangeRate).toFixed(6)} {fromCurrency}.
         </p>
       </div>
     );
   };
+
+
 
   return (
     <>
@@ -87,7 +95,7 @@ const Convert = () => {
         </div>
         <div className='circle-con'>
         <label className='hidden'>1</label>
-        <div className='circle'>
+        <div className='circle' onClick={handleSwitchCurrencies}>
           <svg className="circle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 17" aria-hidden="true" ><path  fill="currentColor" d="M11.726 1.273l2.387 2.394H.667V5h13.446l-2.386 2.393.94.94 4-4-4-4-.94.94zM.666 12.333l4 4 .94-.94L3.22 13h13.447v-1.333H3.22l2.386-2.394-.94-.94-4 4z" ></path></svg>
         </div>
         </div>
@@ -118,7 +126,7 @@ const Convert = () => {
         </div>
         <p className='small-text'>We use the mid-market rate for our Converter. This is for informational purposes only. You won&rsquo;t receive this rate when sending money. <a className='small-text small-link-text' href='#'>Login to view send rates</a> </p>
       </div>
-      <button onClick={handleConversion}>Convert</button>
+      <button className='Convert-but' onClick={handleConversion}>Convert</button>
       </div>
       </form>
     </>

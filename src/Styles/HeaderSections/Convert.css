@@ -34,6 +34,7 @@ select {
   visibility: hidden;
 }
 .circle{
+  cursor: pointer;
   display: flex;
   align-items:center;
   justify-content: center;
@@ -100,16 +101,13 @@ font-weight: 600;
   text-decoration: none;
 }
 
-button {
+.Convert-but {
   background-color: #0071eb;
   color: white;
   padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
-button:hover {
+.Convert-but:hover {
   background-color: rgb(17, 127, 245)
 }
 
@@ -154,7 +152,7 @@ p {
   .currency-attention{
     width: 100%;
   }
-  button {
+  .Convert-but {
     width: 100%;
   }
 }

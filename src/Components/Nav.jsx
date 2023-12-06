@@ -40,7 +40,7 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
+      const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
     };
 
