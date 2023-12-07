@@ -35,6 +35,7 @@ Nav{
   z-index: 200;
 }
 .link{
+  font-weight: 600;
   padding: 8px 20px;
   border-radius: 6px;
   background: rgba(242, 247, 254, 0);
@@ -79,6 +80,7 @@ Nav{
   }
 
   .slide-links{
+    font-weight: 600;
     position: absolute;
     height: 100%;
     width: 100%;

@@ -18,9 +18,6 @@
 .select-con{
   width: 30%;
 }
-label {
-  display: flex;
-}
 
 input,
 select {

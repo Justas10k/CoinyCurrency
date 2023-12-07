@@ -22,7 +22,7 @@ const Convert = () => {
   useEffect(() => {
     const fetchExchangeRate = async () => {
       try {
-        const apiKey = 'fca_live_I5OEo7N2IbSLAV5DWY2HwGo0FD8MKF0JmGywYdv9';
+        const apiKey = 'fca_live_5xYPjNyOkAtaVLiwQjepWvuYGg8jQPpDt2MQah02';
         const response = await fetch(
           `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${fromCurrency}`
         );
