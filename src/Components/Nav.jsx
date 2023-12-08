@@ -16,12 +16,12 @@ const Nav = () => {
       link: "#home",
     },
     {
-      name: "About",
-      link: "#about",
+      name: "Market",
+      link: "#market",
     },
     {
-      name: "Projects",
-      link: "#projects",
+      name: "Choose Us",
+      link: "#chooseUs",
     },
     {
       name: "Contact",
@@ -55,7 +55,7 @@ const Nav = () => {
   return (
     <>
       <nav className={`${scrolled ? "scrolled" : ""}`}>
-          <a href="/"><img className="logo" src={logo} /></a>
+          <a href="#home"><img className="logo" src={logo} /></a>
         
           <ul className="d-none d-lg-flex">
             {navlinks.map((item) => (

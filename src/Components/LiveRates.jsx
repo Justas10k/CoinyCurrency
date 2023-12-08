@@ -2,7 +2,6 @@ import '../Styles/LiveRates.css';
 import { useEffect, useState } from 'react';
 
 function LiveRates() {
-  // State variables
   const [selectedCurrency, setSelectedCurrency] = useState('EUR');
   const [exchangeRates, setExchangeRates] = useState({});
   const [showDeleteButton, setShowDeleteButton] = useState(false);
@@ -11,6 +10,13 @@ function LiveRates() {
   const [selectedNewCurrency, setSelectedNewCurrency] = useState('');
   const [currencyOptions, setCurrencyOptions] = useState([]);
 
+  const [inverse, setInverse] = useState(false);
+  const toggleVerse = () => {
+    setInverse(!inverse);
+  };
+  
+
+  
   // Function to handle currency deletion
   const handleDelete = (currency) => {
     setRowsToDelete((prevRows) => [...prevRows, currency]);
@@ -73,68 +79,67 @@ function LiveRates() {
       .catch((error) => console.error('Error fetching exchange rates:', error));
   }, [selectedCurrency, currencies]);
 
-  
+
   return (
     <>
       <div id="market">
         <div className="con">
           <h2 className="market-h2">Xe Live Exchange Rates</h2>
-
           <div className="market-table">
             <div className="table-row">
-              <div className="checkbox-container full-width table-padding-right">
-                <p className='p-1'>Inverse</p>
-                <label className="switch">
-                  <input type="checkbox" />
+              <div className="checkbox-container full-width table-padding-right ">
+                <p className=''>Inverse</p>
+                <label className="switch" >
+                  <input type="checkbox" onClick={toggleVerse}/>
                   <span className="slider round"></span>
                 </label>
               </div>
               <p className='full-width'>Amount</p>
-              <p className='full-width'>Change (24h)</p>
               <div className='full-width-end right-side table-padding-left'>
-              <button className="Table-edit" onClick={showDeleteButton ? handleDone : setShowDeleteButton}>
+              <button className="Table-edit " onClick={showDeleteButton ? handleDone : setShowDeleteButton}>
                 {showDeleteButton ? 'Done' : 'Edit'}
               </button>
               </div>
             </div>
 
-            {/* Existing row */}
             <div className="table-row select-table">
-              <p className='select-currency full-width table-padding-right'>{selectedCurrency}</p>
-              <p className='full-width'>1</p>
-              <p className='full-width'>1</p>
-              <p className='full-width table-padding-left'></p>
+              <p className='full-width select-currency table-padding-right'>{selectedCurrency}</p>
+              <p className='full-width'>{inverse ? 'inverse' : '1'}</p>
+              <p className='full-width table-padding-left full-width-end'></p>
             </div>
 
-            {/* New rows from API */}
             {currencies.map((currency) => (
-        !rowsToDelete.includes(currency) && (
-          <div className="table-row" key={currency}>
-            <p
-              className={`full-width select-currency table-padding-right ${selectedCurrency === currency ? 'selected' : ''}`}
-              onClick={() => handleCurrencyClick(currency)}
-            >
-              {currency}
-            </p>
-            <p className='full-width'>{exchangeRates[currency]}</p>
-            <p className='full-width'>1</p>
-            <div className='full-width-end right-side table-padding-left'>
-              <button
-                className={`max-width  ${showDeleteButton ? 'delete-button' : 'hidden-button'}`}
-                onClick={() => handleDelete(currency)}
-              >
-                -
-              </button>
-            </div>
-          </div>
-        )
-      ))}
+  !rowsToDelete.includes(currency) && (
+    <div className="table-row table-border" key={currency}>
+      <p
+        className={`full-width select-currency table-padding-right ${selectedCurrency === currency ? 'selected' : ''}`}
+        onClick={() => handleCurrencyClick(currency)}
+      >
+        {currency}
+      </p>
+      <p className='full-width'>
+        {exchangeRates && exchangeRates[currency] !== undefined
+          ? (inverse ? (1 / exchangeRates[currency]).toFixed(6) : exchangeRates[currency].toFixed(6))
+          : 'Loading...'
+        }
+      </p>
+      <div className='full-width-end right-side table-padding-left'>
+        <button
+          className={`max-width  ${showDeleteButton ? 'delete-button' : 'hidden-button'}`}
+          onClick={() => handleDelete(currency)}
+        >
+          -
+        </button>
+      </div>
+    </div>
+  )
+))}
+
           </div>
 
-          {/* Add new currency section */}
-          <div>
-            <label>Add New Currency:</label>
+          <div className='d-flex'>
             <select
+              className='choose-new'
               value={selectedNewCurrency}
               onChange={(e) => setSelectedNewCurrency(e.target.value)}
             >
@@ -147,7 +152,7 @@ function LiveRates() {
                 </option>
               ))}
             </select>
-            <button onClick={handleAddCurrency}>Add</button>
+            <button className='add-button' onClick={handleAddCurrency}>Add</button>
           </div>
         </div>
       </div>

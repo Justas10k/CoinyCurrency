@@ -16,7 +16,7 @@ const Convert = () => {
   const [currencyOptions, setCurrencyOptions] = useState([]);
 
   const [conversionResult, setConversionResult] = useState(null);
-
+  const [error, setError] = useState('');
 
 
   useEffect(() => {
@@ -41,15 +41,12 @@ const Convert = () => {
 
   const handleConversion = () => {
     if (!amount || isNaN(amount)) {
-      alert('Please enter a valid amount');
-      return;
-    }
-
-    const converted = (parseFloat(amount) * exchangeRate).toFixed(6);
-
-    // Store the conversion result in the new state
-    setConversionResult(
-      <div>
+      setError('Please enter a valid amount');
+      setConversionResult(''); // Clear previous conversion result
+    } else {
+      // Your conversion logic here
+      // Set the conversion result in the state
+      setConversionResult(      <div>
         <p className='amout-text'>
           {amount} {fromCurrency} = <p className='result-big-text'>{converted} {toCurrency}.</p>
         </p>
@@ -59,9 +56,14 @@ const Convert = () => {
         <p className='text-grey'>
           1 {toCurrency} = {(1 / exchangeRate).toFixed(6)} {fromCurrency}.
         </p>
-      </div>
-    );
+      </div>);
+      setError(''); // Clear previous error
+    }
   };
+
+    const converted = (parseFloat(amount) * exchangeRate).toFixed(6);
+
+
 
 
 
@@ -113,7 +115,11 @@ const Convert = () => {
           </select>
         </div>
         </div>
-
+        {error && (
+        <div className='error-message'>
+          <p className='text-red'>{error}</p>
+        </div>
+      )}
       {conversionResult && (
         <div className='convert-result'>
           <p>{conversionResult}</p>

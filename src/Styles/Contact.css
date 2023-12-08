@@ -1,0 +1,123 @@
+#contact {
+  background-color: #f8f9fa; 
+  font-weight: 600;
+}
+
+.Contact-us{
+  padding: 40px 0px;
+}
+.Contact-us-text{
+  text-align: center;
+  width: 70%;
+  margin: 0px auto;
+}
+.Contact-us-container{
+  flex-grow: 1;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: row; 
+}
+.Contact-us-container-form{
+  width: 90%;
+  margin: 0px auto;
+  height: 100%;
+}
+
+.dark-blue{
+  color: #242d7d;
+}
+/* sendform */
+
+
+.Send-form {
+  width: 100%;
+  padding: 20px 10px;
+  margin: 10px auto;
+
+}
+.Send-form .Send-text{
+  margin: 20px 0px 20px 0px;
+}
+.Send-form label {
+  display: block;
+  margin-bottom: 8px;
+  color:#545454;
+}
+
+.Send-form input,
+.Send-form textarea {
+  background-color: transparent;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.Send-form button {
+  background-color: #0071eb;
+  color: white;
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing:1.5px;
+  font-weight: bold;
+}
+
+.Send-form button:hover {
+  background-color: rgb(17, 127, 245);
+}
+
+/* sendform */
+
+.Contact-us-container-info{
+
+  margin-left: 2%;
+  width: 33%;
+  height: 100%;
+}  
+
+.Contact-us-container-info-box{
+  width: 100%;
+  padding: 20px;
+  margin: 30px auto;
+}
+#message{
+  resize: vertical;
+}
+@media (max-width: 992px) {
+  .Contact-us{
+    padding: 20px 0px;
+  }
+  .Contact-us-container {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .Contact-us-container-form{
+
+    width: 90%;
+    margin: 0px auto;
+
+  }
+  .Contact-us-container-info{
+    width: 90%;
+    margin: 10px auto;
+  }  
+  .Contact-us-container-info-box{
+    width: 100%;
+    padding: 20px;
+    margin: 0px auto;
+  }
+}
+@media (max-width: 576px) {
+  .Contact-us-container-form{
+    width: 100%;
+  }
+  .Contact-us-container-info{
+    width: 100%;
+  }  
+}
