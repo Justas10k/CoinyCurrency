@@ -34,7 +34,12 @@ footer {
   margin-bottom: 20px;
   font-size: 16px;
 }
-
+.bg-blue{
+  background-color: #0071eb;
+}
+.bg-blue:hover{
+  background-color: rgb(17, 127, 245);
+}
 @media (max-width: 767px) {
   .footer-h3{
     margin-top: 10px;

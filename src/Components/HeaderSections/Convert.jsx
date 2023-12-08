@@ -22,10 +22,12 @@ const Convert = () => {
   useEffect(() => {
     const fetchExchangeRate = async () => {
       try {
-        const apiKey = 'fca_live_5xYPjNyOkAtaVLiwQjepWvuYGg8jQPpDt2MQah02';
         const response = await fetch(
-          `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${fromCurrency}`
+          `https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_GOADoaUR68WLhGybdVUrPgfquKykdmAfQMX8yP6h&base_currency=${fromCurrency}`
         );
+        if (!response.ok) {
+          throw new Error("Error!");
+        }
         const data = await response.json();
         setExchangeRate(data.data[toCurrency]);
         const options = Object.keys(data.data);
@@ -39,7 +41,8 @@ const Convert = () => {
     fetchExchangeRate();
   }, [fromCurrency, toCurrency]);
 
-  const handleConversion = () => {
+  const handleConversion = (e) => {
+    e.preventDefault();
     if (!amount || isNaN(amount)) {
       setError('Please enter a valid amount');
       setConversionResult(''); // Clear previous conversion result

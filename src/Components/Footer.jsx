@@ -69,7 +69,7 @@ function Footer() {
                 <input type="email" className="form-control" placeholder="Enter your email" required />
               </div>
               <div className="form-group">
-                <button type="submit" className="btn btn-primary">Subscribe</button>
+                <button type="submit" className="btn bg-blue">Subscribe</button>
               </div>
               <div className="social-icons-box">
                 <p href="#" className="fa fa-facebook social-icon"></p>
