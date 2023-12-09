@@ -4,12 +4,11 @@ import {
   IconMenu2,
   IconX,
 } from "@tabler/icons-react";
-import logo from '../img/coinylogo.png'
+import logo from "../img/coinylogo.png";
 import { useState, useEffect } from "react";
 import "../Styles/Nav.css";
 
 const Nav = () => {
-
   const navlinks = [
     {
       name: "Home",
@@ -51,36 +50,37 @@ const Nav = () => {
     };
   }, []);
 
-
   return (
     <>
       <nav className={`${scrolled ? "scrolled" : ""}`}>
-          <a href="#home"><img className="logo" src={logo} /></a>
-        
-          <ul className="d-none d-lg-flex">
-            {navlinks.map((item) => (
-              <li key={item.name}>
-                <a className='link' href={item.link}>{item.name}</a>
-              </li>
-            ))}
-          </ul>
+        <a href="#home">
+          <img className="logo" src={logo} />
+        </a>
 
-          <span className="nav-icons">
-            <IconBrandTwitter className="icon nav-icon" />
-            <IconBrandDiscord className="icon nav-icon" />
-            <div className="d-md-block d-lg-none">
-              <IconMenu2
-                className={`icon nav-icon ${isOpen ? "open" : ""}`}
-                onClick={toggleMenu}
-              />
-            </div>
-          </span>
+        <ul className="d-none d-lg-flex">
+          {navlinks.map((item) => (
+            <li key={item.name}>
+              <a className="link" href={item.link}>
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
 
+        <span className="nav-icons">
+          <IconBrandTwitter className="icon nav-icon" />
+          <IconBrandDiscord className="icon nav-icon" />
+          <div className="d-md-block d-lg-none">
+            <IconMenu2
+              className={`icon nav-icon ${isOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+            />
+          </div>
+        </span>
       </nav>
       <div className="d-lg-none">
         <div className={`mobile-nav ${isOpen ? "active" : ""}`}>
           <div className="slide-links">
-            
             <IconX
               className={`icon nav-icon X-icon ${isOpen ? "open" : ""}`}
               width={30}
@@ -90,12 +90,13 @@ const Nav = () => {
 
             <ul>
               {navlinks.map((item) => (
-              <li key={item.name}>
-                <a className='togglelink' href={item.link}>{item.name}</a>
-              </li>
-            ))}
+                <li key={item.name}>
+                  <a className="togglelink" href={item.link}>
+                    {item.name}
+                  </a>
+                </li>
+              ))}
             </ul>
-            
           </div>
         </div>
       </div>

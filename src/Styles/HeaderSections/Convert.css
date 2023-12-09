@@ -40,7 +40,6 @@ select {
   background-color: transparent;
   border-radius: 50%;
   border: 1px solid #ccc;
-  /* flex-shrink: 0; */
 }
 .circle-icon{
   stroke-width: 2;

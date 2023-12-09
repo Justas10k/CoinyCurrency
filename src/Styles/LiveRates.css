@@ -32,8 +32,6 @@
 .table-padding-left{
   padding: 10px 30px 10px 0px;
 }
-/* row1 */
-
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -123,12 +121,12 @@ input:checked + .slider:before {
   color: white;
   font-size: 20px;
   width: 20px;
-  height: 20px; /* Set a fixed height */
-  border-radius: 50%; /* Make it circular */
+  height: 20px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer; /* Add cursor pointer for better usability */
+  cursor: pointer;
 }
 
 .hidden-button{

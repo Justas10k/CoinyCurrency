@@ -3,22 +3,21 @@ import {
   IconCoins,
   IconSend,
   IconChartBar,
-  IconBell
+  IconBell,
 } from "@tabler/icons-react";
 
-import '../Styles/Header.css';
+import "../Styles/Header.css";
 import Convert from "./HeaderSections/Convert";
-import ComingSoon from './HeaderSections/ComingSoon'
-
+import ComingSoon from "./HeaderSections/ComingSoon";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState('convert');
+  const [activeSection, setActiveSection] = useState("convert");
 
   const sectionComponents = {
     convert: <Convert />,
     send: <ComingSoon />,
-    charts: <ComingSoon/>,
-    alerts: <ComingSoon/>,
+    charts: <ComingSoon />,
+    alerts: <ComingSoon />,
   };
 
   const handleSectionClick = (section) => {
@@ -34,7 +33,6 @@ const Header = () => {
         <div className="header-section">
           <div className="header-section-top">
             {Object.keys(sectionComponents).map((section) => (
-
               <div
                 key={section}
                 className={`header-section-top-links ${
@@ -52,7 +50,6 @@ const Header = () => {
                   <span>{section}</span>
                 </a>
               </div>
-
             ))}
           </div>
           <div className="header-section-bot">
@@ -60,21 +57,21 @@ const Header = () => {
           </div>
         </div>
       </div>
-  </header>
+    </header>
   );
 };
 const getIcon = (section) => {
   switch (section) {
-    case 'convert':
-      return <IconCoins className={`header-section-top-icon`  } />;
-    case 'send':
-      return <IconSend className={`header-section-top-icon` } />;
-    case 'charts':
-      return <IconChartBar className={`header-section-top-icon` } />;
-    case 'alerts':
-      return <IconBell className={`header-section-top-icon` }/>;
+    case "convert":
+      return <IconCoins className={`header-section-top-icon`} />;
+    case "send":
+      return <IconSend className={`header-section-top-icon`} />;
+    case "charts":
+      return <IconChartBar className={`header-section-top-icon`} />;
+    case "alerts":
+      return <IconBell className={`header-section-top-icon`} />;
     default:
       return null;
   }
 };
-export default Header; 
+export default Header;
