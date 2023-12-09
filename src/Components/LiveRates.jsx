@@ -94,8 +94,8 @@ function LiveRates() {
       .catch((error) => console.error("Error fetching exchange rates:", error));
   }, [selectedCurrency, currencies]);
 
+  //fetch for symbol, full-name
   useEffect(() => {
-    // Assuming you're making an HTTP request to the API
     const apiUrl =
       "https://api.freecurrencyapi.com/v1/currencies?apikey=fca_live_GOADoaUR68WLhGybdVUrPgfquKykdmAfQMX8yP6h";
 

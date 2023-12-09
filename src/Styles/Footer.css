@@ -39,6 +39,7 @@ footer {
 }
 .bg-blue{
   background-color: #0071eb;
+  color: white;
 }
 .bg-blue:hover{
   background-color: rgb(17, 127, 245);
