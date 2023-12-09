@@ -6,7 +6,7 @@ function LiveRates() {
   const [exchangeRates, setExchangeRates] = useState({});
   const [showDeleteButton, setShowDeleteButton] = useState(false);
   const [rowsToDelete, setRowsToDelete] = useState([]);
-  const [currencies, setCurrencies] = useState(['CAD', 'USD', 'RUB', 'HKD']);
+  const [currencies, setCurrencies] = useState(['CAD', 'USD', 'RUB', 'JPY']);
   const [selectedNewCurrency, setSelectedNewCurrency] = useState('');
   const [currencyOptions, setCurrencyOptions] = useState([]);
 
@@ -120,8 +120,8 @@ useEffect(() => {
 
             <p className='full-width select-currency table-padding-right'>{selectedCurrency}</p>
             <p className='full-width'>{inverse ? 'inverse' : '1'}</p>
-            <p className='full-width'>{currenciesInfo[selectedCurrency]?.symbol}</p>
-            <p className='full-width'>{currenciesInfo[selectedCurrency]?.name}</p>
+            <p className='full-width'>{currenciesInfo[selectedCurrency]?.symbol || 'Loading...'}</p>
+            <p className='full-width'>{currenciesInfo[selectedCurrency]?.name || 'Loading...'}</p>
             <p className='full-width table-padding-left full-width-end'></p>
           </div>
             
@@ -140,8 +140,8 @@ useEffect(() => {
           : 'Loading...'
         }
       </p>
-      <p className='full-width'>{currenciesInfo[currency]?.symbol}</p>
-      <p className='full-width'>{currenciesInfo[currency]?.name}</p>
+      <p className='full-width'>{currenciesInfo[currency]?.symbol || 'Loading...'} </p>
+      <p className='full-width'>{currenciesInfo[currency]?.name || 'Loading...'}</p>
       <div className='full-width-end right-side table-padding-left'>
         <button
           className={`max-width  ${showDeleteButton ? 'delete-button' : 'hidden-button'}`}
