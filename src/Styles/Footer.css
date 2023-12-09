@@ -27,6 +27,9 @@ footer {
   font-weight: 500;
   color: white;
 }
+.footer-link:hover, .footer-contact:hover{
+  text-decoration: underline;
+}
 .form-group input[type="email"] {
   width: 100%;
   padding: 10px;

@@ -32,7 +32,6 @@ button{
   cursor: pointer;
 }
 .con{
-  padding: 10px;
   max-width: 1200px;
   margin: 0px auto;
 }
@@ -56,13 +55,13 @@ button{
 }
 @media (max-width: 768px) {
   .con{
-    max-width: 90%;
+    max-width: 95%;
     margin: 0px auto;
   }
 }
 @media (max-width: 576px) {
   .con{
-    max-width: 98%;
+    max-width: 100%;
     margin: 0px auto;
   }
 }
