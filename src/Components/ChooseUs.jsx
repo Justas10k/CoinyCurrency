@@ -55,7 +55,7 @@ const ChooseUs = () => {
           <h2 className='color-dark-blue'>We&rsquo;ve got everything you need to launch and grow your business</h2>
           <hr className='Whatwedo-line' />
         </div>
-        <div className='d-flex'>
+        <div className='choose-text-con'>
           {chooseUsData.map((item, index) => (
             <div key={index} className={`col-lg-6 col-md-12 ${index % 2 === 0 ? '' : 'Whatwedo-container'}`}>
               <div className='Whatwedo-block'>
