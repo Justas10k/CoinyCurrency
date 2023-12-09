@@ -65,7 +65,6 @@ function LiveRates() {
   };
 
   useEffect(() => {
-     // Fetch initial exchange rates and currency options on component mount or when dependencies change
     const apiUrl = `https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_5xYPjNyOkAtaVLiwQjepWvuYGg8jQPpDt2MQah02&base_currency=${selectedCurrency}`;
 
     fetch(apiUrl)
